@@ -8,11 +8,12 @@ public class TaskManager {
 
     List<Task> taskList = new ArrayList<>();
 
-    public void addTask(Task task) {
+    public void addTask(String desc) {
+        Task task = new Task(desc);
         taskList.add(task);
     }
 
-    public void removeTask(UUID id) {
+    public void removeTask(int id) {
         for(Task task : taskList) {
             if(task.getId() == id) {
                 taskList.remove(task);
@@ -20,7 +21,7 @@ public class TaskManager {
         }
     }
 
-    public Task getTask(UUID id) {
+    public Task getTask(int id) {
         for(Task task : taskList) {
             if(task.getId() == id) {
                 return task;
